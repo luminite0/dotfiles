@@ -1,0 +1,114 @@
+{
+    "layer": "top",
+    "output": ["DP-1", "HDMI-A-1"],
+    "margin-top": 0,
+    "margin-bottom": 0,
+    "layer": "top",
+    "margin-left": 0,
+    "margin-right": 0,    
+    "spacing": 0,
+    "modules-left": ["hyprland/workspaces", "cpu"],
+    "modules-center": ["clock"],
+    "modules-right": [
+        "tray",
+        "custom/wl-gammarelay-brightness",
+        "memory",
+        "disk",
+        "pulseaudio",
+        "bluetooth",
+        "battery", 
+        "network"
+    ],
+
+
+
+
+
+
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "format-icons": {
+        },
+        "persistent-workspaces": {
+            "HDMI-A-1": 1,
+            "HDMI-A-1": 2,
+            "HDMI-A-1": 3,
+            "HDMI-A-1": 4,
+            "HDMI-A-1": 5,
+            "DP-1": 6,                    
+            "DP-1": 7,                    
+            "DP-1": 8,                    
+            "DP-1": 9,                    
+            "DP-1": 10
+        }
+    },
+
+    "cpu": {
+        "interval": 1,
+        "format": "{icon0:1} {icon1:1} {icon2:1} {icon3:1} {icon4:1} {icon5:1} {icon6:1} {icon7:1} {icon8:1} {icon9:1} {icon10:1} {icon11:1}",
+        "format-icons": [
+            "<span color='#a1d0fc'>▁</span>", // ice blue
+        "<span color='#00cec8'>▂</span>", // blue-green
+        "<span color='#50c878'>▃</span>", // emerald green
+        "<span color='#c4f500'>▄</span>", // green-yellow
+        "<span color='#ffaa33'>▅</span>", // yellow-orange
+        "<span color='#ffffa5'>▆</span>", // yellow
+        "<span color='#ff9977'>▇</span>", // orange
+        "<span color='#dd532e'>█</span>"  // red
+        ]
+    },
+
+    "custom/wl-gammarelay-brightness": {
+        "format": " {}%",
+        "exec": "wl-gammarelay-rs watch {bp}",
+        "on-scroll-up": "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateBrightness d +0.02",
+        "on-scroll-down": "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateBrightness d -0.02"
+    },
+
+    "memory": {
+        "format": "\uf4bc {}%"
+    },
+
+    "disk": {
+        "interval": 60,
+        "format": "🖴 {percentage_used}%", "path": "/"
+    },
+
+    "bluetooth": {
+        "format": " {status}"
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-bluetooth": " {volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon}  {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        }
+    },
+
+    // Network
+    "network": {
+        "format": "{ifname}",
+        "format-wifi": "  {signalStrength}%",
+        "format-ethernet": "  {ifname}",
+        "format-disconnected": "Disconnected",
+        "tooltip-format": " {ifname} via {gwaddri}", "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}", "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}", "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50
+    },
+
+    "clock": {
+        "format": "{:%H:%M %a %m/%d}",
+        "on-click": "ags toggle calendar",
+        "tooltip": false
+    }
+}

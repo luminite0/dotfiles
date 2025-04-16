@@ -1,0 +1,88 @@
+* {
+    font: "Agave Nerd Font Mono 14";
+    background: rgba(1, 14, 26, 85%);
+    foreground: #d4d9d0;
+}
+
+window {
+    background-color: @background;
+    text-color: @foreground;
+    border-radius: 20px;
+    padding: 30px;
+    width: 40%;
+    height: 50%;
+}
+
+mainbox {
+    background-color: transparent;
+    text-color: @foreground;
+}
+
+inputbar {
+    children: [prompt,textbox-prompt-colon,entry,overlay,case-indicator];
+    background-color: transparent;
+    text-color: @foreground;
+}
+
+prompt {
+    background-color: inherit;
+    text-color: inherit;
+}
+
+textbox-prompt-colon {
+    background-color: inherit;
+    text-color: inherit;
+    content: ": ";
+    expand: false;
+}
+
+entry {
+    background-color: inherit;
+    text-color: inherit;
+}
+
+case-indicator {
+    background-color: inherit;
+}
+
+
+message {
+    background-color: inherit;
+    background-color: transparent;
+    border-color: @background;
+    margin-top: 10px;
+}
+
+textbox {
+    background-color: transparent;
+    text-color: @foreground;
+    padding: 50px 0px 0px 0px;
+}
+
+
+listview {
+    padding: 10px 0px 0px 0px;
+    background-color: transparent;
+}
+
+element {
+    background-color: transparent;
+    text-color: @foreground;
+    margin: 0px 0px 0px 0px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 5px;
+}
+
+element-icon {
+    background-color: transparent;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+}
+
+element selected {
+    text-color: inherit;
+    background-color: #6B9291;
+}
