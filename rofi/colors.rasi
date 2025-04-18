@@ -1,6 +1,6 @@
 * {
     font: "Agave Nerd Font Mono 14";
-    background: rgba(1, 14, 26, 85%);
+    background: rgba(0, 14, 26, 85%);
     foreground: #d4d9d0;
 }
 
@@ -32,7 +32,7 @@ prompt {
 textbox-prompt-colon {
     background-color: inherit;
     text-color: inherit;
-    content: ": ";
+    content: "";
     expand: false;
 }
 
@@ -85,4 +85,11 @@ element-text {
 element selected {
     text-color: inherit;
     background-color: #6B9291;
+}
+
+error-message {
+    text-color: inherit;
+    background-color: inherit;
+    border-radius: inherit;
+    padding: 10px 10px 10px 10px;
 }
